@@ -152,3 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  powerUpPrefabs:
+  - {fileID: 6683804361168499383, guid: 61a34c088c9571f47a79f12a42bb0bc7, type: 3}
+  - {fileID: 4292789451995649097, guid: 93bc2321b6bbba44c82b3f4c36861c20, type: 3}
+  - {fileID: 8485282348121668716, guid: 895e19180c7c77945a2e4e42afc546ca, type: 3}

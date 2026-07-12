@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         Application.Quit();
         }
     }
+    public int GetScore() { return score; }
+
     public void AddScore(int points)
     {
         if (isOver) return;
@@ -55,3 +57,4 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
+

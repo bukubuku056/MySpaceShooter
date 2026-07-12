@@ -3,24 +3,24 @@
 public class EnemyMover : MonoBehaviour
 {
     public float speed = 3f;
+    public GameObject[] powerUpPrefabs;
 
     void Update()
     {
-        // 敌机向下飞（3D的Y轴向下）
         transform.Translate(Vector3.down * speed * Time.deltaTime);
-
-        // 飞出屏幕 → 销毁
-        if (transform.position.y < -8f)
-        {
-            Destroy(gameObject);
-        }
+        if (transform.position.y < -8f) Destroy(gameObject);
     }
 
-    // 撞到玩家 → 游戏结束
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null && player.HasShield())
+            {
+                Destroy(gameObject);
+                return;
+            }
             GameManager.Instance.GameOver();
         }
     }
