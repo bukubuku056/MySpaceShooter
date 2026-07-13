@@ -4,10 +4,10 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public float startInterval = 2f;     // 初始2秒一个
-    public float minInterval = 0.5f;     // 最快0.5秒一个
-    public float baseSpeed = 3f;         // 敌机初始速度
-    public float maxSpeed = 8f;          // 敌机最快速度
+    public float startInterval = 2f;
+    public float minInterval = 0.5f;
+    public float baseSpeed = 3f;
+    public float maxSpeed = 8f;
 
     void Start()
     {
@@ -18,7 +18,12 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            // 根据分数计算当前间隔和速度
+            if (!GameManager.Instance.IsPlaying())
+            {
+                yield return new WaitForSeconds(0.1f);
+                continue;
+            }
+
             int currentScore = GameManager.Instance.GetScore();
             float interval = Mathf.Lerp(startInterval, minInterval, currentScore / 100f);
             float enemySpeed = Mathf.Lerp(baseSpeed, maxSpeed, currentScore / 100f);

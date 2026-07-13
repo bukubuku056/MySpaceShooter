@@ -1,10 +1,10 @@
 {
-  "unity_port": 61618,
-  "stream_port": 61717,
+  "unity_port": 57190,
+  "stream_port": 57203,
   "created_date": "2026-05-20T08:08:52.2837883Z",
   "project_path": "D:/TuanJieCode/MySpaceShooter/Assets",
   "reloading": false,
   "reason": "ready",
   "seq": 1,
-  "last_heartbeat": "2026-07-12T16:30:59.0216139Z"
+  "last_heartbeat": "2026-07-13T16:16:25.3139267Z"
 }
